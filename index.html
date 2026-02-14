@@ -1,148 +1,327 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
+    <meta name="description" content="zkqiu 的个人主页 - 分享项目与思考">
+    <title>zkqiu · 个人主页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg: #fafaf9;
+            --bg-elevated: #fff;
+            --text: #1c1917;
+            --text-muted: #57534e;
+            --accent: #0d9488;
+            --accent-hover: #0f766e;
+            --border: #e7e5e4;
+            --radius: 12px;
+            --shadow: 0 1px 3px rgba(0,0,0,.06);
+            --shadow-hover: 0 4px 12px rgba(0,0,0,.08);
         }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--bg);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
+        /* Header / Hero */
         header {
-            background: #f8f9fa;
-            padding: 60px 0;
+            padding: 80px 24px 64px;
             text-align: center;
+            background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);
+            border-bottom: 1px solid var(--border);
         }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
+        .profile-wrap {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
             border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        nav {
-            background: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--accent) 0%, #14b8a6 100%);
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 30px;
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: var(--shadow-hover);
         }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
+        .profile-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-wrap:has(img) .profile-initial { display: none; }
+        header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        header .tagline {
+            color: var(--text-muted);
+            font-size: 1rem;
             font-weight: 500;
         }
 
+        /* Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255,255,255,.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        nav .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav a {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            border-radius: 8px;
+            transition: color .2s, background .2s;
+        }
+        nav a:hover, nav a.active { color: var(--accent); background: rgba(13, 148, 136, .08); }
+
+        /* Sections */
         section {
-            padding: 60px 0;
+            padding: 56px 0;
+        }
+        section:nth-child(even) { background: var(--bg-elevated); }
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text);
         }
 
+        /* About */
+        #about .about-text {
+            color: var(--text-muted);
+            max-width: 640px;
+            font-size: 1.05rem;
+        }
+
+        /* Projects */
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
         }
-
         .project-card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: box-shadow .2s, border-color .2s;
         }
-
-        footer {
-            background: #f8f9fa;
-            padding: 40px 0;
-            text-align: center;
+        .project-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(13, 148, 136, .25);
         }
-
-        .social-links {
-            margin-top: 20px;
+        .project-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
-
-        .social-links a {
-            margin: 0 10px;
-            color: #333;
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .project-card a {
+            color: var(--accent);
             text-decoration: none;
+            font-weight: 500;
+            margin-top: 12px;
+            display: inline-block;
+        }
+        .project-card a:hover { text-decoration: underline; }
+
+        /* Blog placeholder */
+        #blog .blog-placeholder {
+            color: var(--text-muted);
+            padding: 32px;
+            text-align: center;
+            border: 1px dashed var(--border);
+            border-radius: var(--radius);
+        }
+
+        /* Contact */
+        #contact p { color: var(--text-muted); margin-bottom: 20px; }
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .contact-links a:hover {
+            border-color: var(--accent);
+            background: rgba(13, 148, 136, .06);
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer .social { margin-top: 16px; }
+        footer .social a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        footer .social a:hover { color: var(--accent); }
+
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        @media (max-width: 640px) {
+            header { padding: 48px 16px 40px; }
+            section { padding: 40px 0; }
+            .profile-wrap { width: 96px; height: 96px; font-size: 40px; }
+        }
+
+        /* Scroll-trigger fade (optional, respects prefers-reduced-motion) */
+        @media (prefers-reduced-motion: no-preference) {
+            section { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="你的照片URL" alt="个人照片" class="profile-img">
-        <h1>你的名字</h1>
-        <p>你的职位/身份描述</p>
+        <div class="profile-wrap">
+            <span class="profile-initial" aria-hidden="true">z</span>
+            <!-- 需要头像时在此添加：<img src="你的照片URL" alt="头像"> -->
+        </div>
+        <h1>zkqiu</h1>
+        <p class="tagline">在这里写一句简短的个人介绍 / 职位</p>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#about">关于我</a></li>
-            <li><a href="#projects">项目</a></li>
-            <li><a href="#blog">博客</a></li>
-            <li><a href="#contact">联系我</a></li>
-        </ul>
+        <div class="container">
+            <ul>
+                <li><a href="#about" class="nav-link">关于我</a></li>
+                <li><a href="#projects" class="nav-link">项目</a></li>
+                <li><a href="#blog" class="nav-link">博客</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main>
         <section id="about" class="container">
-            <h2>关于我</h2>
-            <p>在这里介绍你自己...</p>
+            <h2 class="section-title">关于我</h2>
+            <p class="about-text">
+                在这里写一段关于你的介绍：教育背景、工作方向、兴趣或正在做的事。保持简洁，让访客快速了解你。
+            </p>
         </section>
 
         <section id="projects" class="container">
-            <h2>我的项目</h2>
+            <h2 class="section-title">项目</h2>
             <div class="projects">
                 <div class="project-card">
-                    <h3>项目名称</h3>
-                    <p>项目描述...</p>
+                    <h3>项目一</h3>
+                    <p>简短描述这个项目做了什么、用了什么技术或解决了什么问题。</p>
+                    <a href="#">查看项目 →</a>
                 </div>
-                <!-- 更多项目卡片 -->
+                <div class="project-card">
+                    <h3>项目二</h3>
+                    <p>同样格式：一句话说明项目亮点或成果。</p>
+                    <a href="#">查看项目 →</a>
+                </div>
+                <div class="project-card">
+                    <h3>项目三</h3>
+                    <p>可以放开源仓库、毕设、 side project 或作品集链接。</p>
+                    <a href="#">查看项目 →</a>
+                </div>
             </div>
         </section>
 
         <section id="blog" class="container">
-            <h2>最新博客</h2>
-            <!-- 博客文章列表 -->
+            <h2 class="section-title">博客</h2>
+            <div class="blog-placeholder">
+                后续可以在这里接入博客列表或链接到你的博客站点。
+            </div>
         </section>
 
         <section id="contact" class="container">
-            <h2>联系我</h2>
-            <p>你的联系方式...</p>
+            <h2 class="section-title">联系我</h2>
+            <p>欢迎通过以下方式联系或关注我。</p>
+            <div class="contact-links">
+                <a href="https://github.com/zkqiu" target="_blank" rel="noopener">GitHub</a>
+                <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:your@email.com">Email</a>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 你的名字. All rights reserved.</p>
-            <div class="social-links">
-                <a href="你的GitHub链接">GitHub</a>
-                <a href="你的LinkedIn链接">LinkedIn</a>
-                <a href="你的Twitter链接">Twitter</a>
+            <p>© 2025 zkqiu</p>
+            <div class="social">
+                <a href="https://github.com/zkqiu" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        // 当前区块高亮导航
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function setActive() {
+            const scrollY = window.scrollY;
+            sections.forEach((sec, i) => {
+                const top = sec.offsetTop - 80;
+                const height = sec.offsetHeight;
+                if (scrollY >= top && scrollY < top + height) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    const href = '#' + sec.id;
+                    const link = document.querySelector('.nav-link[href="' + href + '"]');
+                    if (link) link.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', setActive);
+        setActive();
+    </script>
 </body>
-</html> 
+</html>
