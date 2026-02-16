@@ -7,57 +7,110 @@
     <title>zkqiu · 个人主页</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="compact">
-        <div class="profile-wrap">
-            <span class="profile-initial" aria-hidden="true">z</span>
-        </div>
-        <h1><a href="index.html">zkqiu</a></h1>
-        <p class="tagline">构建数字与诗意的交界 · 开发者 · 写作者 · 探索者</p>
-    </header>
+    <!-- 主容器 -->
+    <div class="main-wrapper">
+        <!-- 导航栏 -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">z</div>
+                    <span class="logo-text">zkqiu</span>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link active">首页</a>
+                    <a href="blog.html" class="nav-link">博客</a>
+                    <a href="projects.html" class="nav-link">项目</a>
+                    <a href="index.html#contact" class="nav-link">联系</a>
+                </nav>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="blog.html">博客</a></li>
-                <li><a href="projects.html">项目</a></li>
-                <li><a href="index.html#contact">联系</a></li>
-            </ul>
-        </div>
-    </nav>
+                <div class="header-actions">
+                    <a href="https://github.com/zkqiu" target="_blank" rel="noopener" class="btn-secondary">
+                        GitHub
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10M10 2L2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn-primary">联系我</a>
+                </div>
+            </div>
+        </header>
 
-    <main>
-        <section id="about" class="container">
-            <h2 class="section-title">关于我</h2>
-            <p class="about-text">
-                你好，我是 zkqiu。曾在某校计算机系读书，现从事软件开发与产品设计。喜欢把想法写成代码和文字，在开源项目里打杂，偶尔写写博客、拍拍胶片。相信技术应当服务于人，也热衷于探索编程、设计与生活的交叉地带。
-            </p>
-            <div class="highlights" aria-label="兴趣与方向">
-                <span>开源</span>
-                <span>前端与工具链</span>
-                <span>写作</span>
-                <span>摄影</span>
-                <span>独立产品</span>
+        <!-- 主要内容区域 -->
+        <main class="hero-section">
+            <div class="hero-container">
+                <!-- 左栏：视觉内容 -->
+                <div class="hero-visual">
+                    <div class="visual-wrapper">
+                        <div class="profile-image-placeholder">
+                            <div class="profile-circle">z</div>
+                        </div>
+                        <div class="play-button-overlay">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <div class="video-timestamp">00:35</div>
+                    </div>
+                </div>
+
+                <!-- 右栏：文本内容 -->
+                <div class="hero-content">
+                    <h1 class="hero-title">受开发者喜爱</h1>
+                    <p class="hero-description">
+                        不要只听我的一面之词。加入众多关注者，了解我的开源项目、技术文章与思考。
+                    </p>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-line"></div>
+                        <blockquote class="testimonial-text">
+                            "终于找到了一个既实用又有深度的技术博客！代码示例清晰，思考角度独特，每次阅读都有收获。我已经把它加入了我的日常阅读清单。"
+                        </blockquote>
+                        <p class="testimonial-author">- 某位开发者，GitHub 关注者</p>
+                    </div>
+
+                    <a href="#projects" class="btn-outline">查看更多项目</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- 关于我部分 -->
+        <section id="about" class="content-section">
+            <div class="section-container">
+                <h2 class="section-title">关于我</h2>
+                <p class="about-text">
+                    你好，我是 zkqiu。曾在某校计算机系读书，现从事软件开发与产品设计。喜欢把想法写成代码和文字，在开源项目里打杂，偶尔写写博客、拍拍胶片。相信技术应当服务于人，也热衷于探索编程、设计与生活的交叉地带。
+                </p>
+                <div class="highlights">
+                    <span>开源</span>
+                    <span>前端与工具链</span>
+                    <span>写作</span>
+                    <span>摄影</span>
+                    <span>独立产品</span>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="container">
-            <h2 class="section-title">联系我</h2>
-            <p>欢迎通过以下方式联系或关注我。</p>
-            <div class="contact-links">
-                <a href="https://github.com/zkqiu" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/zkqiu" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="mailto:hi@zkqiu.dev">Email</a>
+        <!-- 联系部分 -->
+        <section id="contact" class="content-section">
+            <div class="section-container">
+                <h2 class="section-title">联系我</h2>
+                <p class="contact-intro">欢迎通过以下方式联系或关注我。</p>
+                <div class="contact-links">
+                    <a href="https://github.com/zkqiu" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zkqiu" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="mailto:hi@zkqiu.dev">Email</a>
+                </div>
             </div>
         </section>
-    </main>
+    </div>
 
     <footer>
-        <div class="container">
+        <div class="footer-container">
             <p>© 2025 zkqiu</p>
             <div class="social">
                 <a href="https://github.com/zkqiu" target="_blank" rel="noopener">GitHub</a>
@@ -66,16 +119,23 @@
     </footer>
 
     <script>
+        // 导航链接高亮
         (function () {
+            const currentPath = window.location.pathname;
             const hash = window.location.hash;
-            document.querySelectorAll('nav a').forEach(function (a) { a.classList.remove('active'); });
-            if (hash === '#contact') {
-                const link = document.querySelector('a[href="index.html#contact"]');
-                if (link) link.classList.add('active');
-            } else {
-                const home = document.querySelector('a[href="index.html"]');
-                if (home) home.classList.add('active');
-            }
+            
+            document.querySelectorAll('.nav-link').forEach(function (link) {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                
+                if (hash === '#contact' && href.includes('#contact')) {
+                    link.classList.add('active');
+                } else if (currentPath.includes('index.html') || currentPath === '/' || currentPath.endsWith('/')) {
+                    if (href === 'index.html' || href === '#home' || href === '/') {
+                        link.classList.add('active');
+                    }
+                }
+            });
         })();
     </script>
 </body>

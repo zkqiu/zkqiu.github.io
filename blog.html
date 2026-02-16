@@ -7,46 +7,76 @@
     <title>博客 · zkqiu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="compact">
-        <div class="profile-wrap">
-            <span class="profile-initial" aria-hidden="true">z</span>
-        </div>
-        <h1><a href="index.html">zkqiu</a></h1>
-        <p class="tagline">构建数字与诗意的交界</p>
-    </header>
+    <!-- 主容器 -->
+    <div class="main-wrapper">
+        <!-- 导航栏 -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">z</div>
+                    <span class="logo-text">zkqiu</span>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="blog.html" class="nav-link active">博客</a>
+                    <a href="projects.html" class="nav-link">项目</a>
+                    <a href="index.html#contact" class="nav-link">联系</a>
+                </nav>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="blog.html" class="active">博客</a></li>
-                <li><a href="projects.html">项目</a></li>
-                <li><a href="index.html#contact">联系</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main>
-        <section id="blog" class="container">
-            <h2 class="section-title">博客</h2>
-            <div class="blog-placeholder">
-                <strong>正在酝酿中</strong><br>
-                后续会在这里接入文章列表，或链接到独立博客。敬请期待。
+                <div class="header-actions">
+                    <a href="https://github.com/zkqiu" target="_blank" rel="noopener" class="btn-secondary">
+                        GitHub
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10M10 2L2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <a href="index.html#contact" class="btn-primary">联系我</a>
+                </div>
             </div>
-        </section>
-    </main>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="content-section">
+            <div class="section-container">
+                <h1 class="page-title">博客</h1>
+                <p class="page-intro">记录技术思考、开发经验与生活感悟</p>
+                
+                <div class="blog-content">
+                    <div class="blog-placeholder">
+                        <div class="blog-placeholder-icon">📝</div>
+                        <h3>正在酝酿中</h3>
+                        <p>后续会在这里接入文章列表，或链接到独立博客。敬请期待。</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 
     <footer>
-        <div class="container">
+        <div class="footer-container">
             <p>© 2025 zkqiu</p>
             <div class="social">
                 <a href="https://github.com/zkqiu" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        // 导航链接高亮
+        (function () {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.nav-link').forEach(function (link) {
+                const href = link.getAttribute('href');
+                if (href === currentPath || (currentPath.includes('blog') && href.includes('blog'))) {
+                    link.classList.add('active');
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

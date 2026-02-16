@@ -7,59 +7,106 @@
     <title>项目 · zkqiu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="compact">
-        <div class="profile-wrap">
-            <span class="profile-initial" aria-hidden="true">z</span>
-        </div>
-        <h1><a href="index.html">zkqiu</a></h1>
-        <p class="tagline">构建数字与诗意的交界</p>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="blog.html">博客</a></li>
-                <li><a href="projects.html" class="active">项目</a></li>
-                <li><a href="index.html#contact">联系</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main>
-        <section id="projects" class="container">
-            <h2 class="section-title">项目</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <h3>Sidekick CLI</h3>
-                    <p>轻量命令行工具，一键拉取模板、初始化项目并注入常用配置，支持多语言与自定义模板仓库。</p>
-                    <a href="https://github.com/zkqiu" target="_blank" rel="noopener">查看项目 →</a>
+    <!-- 主容器 -->
+    <div class="main-wrapper">
+        <!-- 导航栏 -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">z</div>
+                    <span class="logo-text">zkqiu</span>
                 </div>
-                <div class="project-card">
-                    <h3>黄昏笔记</h3>
-                    <p>本地优先的 Markdown 笔记应用，支持标签、全文检索与导出，用 Electron + 简单后端搭建的个人知识库。</p>
-                    <a href="https://github.com/zkqiu" target="_blank" rel="noopener">查看项目 →</a>
-                </div>
-                <div class="project-card">
-                    <h3>胶片模拟器</h3>
-                    <p>基于 Web 的图片滤镜与排版工具，模拟经典胶片色调与冲印效果，可导出预设分享。</p>
-                    <a href="https://github.com/zkqiu" target="_blank" rel="noopener">查看项目 →</a>
+                
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="blog.html" class="nav-link">博客</a>
+                    <a href="projects.html" class="nav-link active">项目</a>
+                    <a href="index.html#contact" class="nav-link">联系</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="https://github.com/zkqiu" target="_blank" rel="noopener" class="btn-secondary">
+                        GitHub
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10M10 2L2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <a href="index.html#contact" class="btn-primary">联系我</a>
                 </div>
             </div>
-        </section>
-    </main>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="content-section">
+            <div class="section-container">
+                <h1 class="page-title">项目</h1>
+                <p class="page-intro">开源项目与个人作品展示</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">⚡</div>
+                        <h3>Sidekick CLI</h3>
+                        <p>轻量命令行工具，一键拉取模板、初始化项目并注入常用配置，支持多语言与自定义模板仓库。</p>
+                        <a href="https://github.com/zkqiu" target="_blank" rel="noopener" class="project-link">
+                            查看项目
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3L11 8L6 13M11 8H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-icon">📔</div>
+                        <h3>黄昏笔记</h3>
+                        <p>本地优先的 Markdown 笔记应用，支持标签、全文检索与导出，用 Electron + 简单后端搭建的个人知识库。</p>
+                        <a href="https://github.com/zkqiu" target="_blank" rel="noopener" class="project-link">
+                            查看项目
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3L11 8L6 13M11 8H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-icon">🎞️</div>
+                        <h3>胶片模拟器</h3>
+                        <p>基于 Web 的图片滤镜与排版工具，模拟经典胶片色调与冲印效果，可导出预设分享。</p>
+                        <a href="https://github.com/zkqiu" target="_blank" rel="noopener" class="project-link">
+                            查看项目
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3L11 8L6 13M11 8H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 
     <footer>
-        <div class="container">
+        <div class="footer-container">
             <p>© 2025 zkqiu</p>
             <div class="social">
                 <a href="https://github.com/zkqiu" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        // 导航链接高亮
+        (function () {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.nav-link').forEach(function (link) {
+                const href = link.getAttribute('href');
+                if (href === currentPath || (currentPath.includes('projects') && href.includes('projects'))) {
+                    link.classList.add('active');
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
