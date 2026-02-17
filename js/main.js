@@ -15,11 +15,13 @@ function switchLanguage(lang) {
     // 更新HTML lang属性
     document.documentElement.lang = translations[lang];
     
-    // 更新所有带data-zh和data-en属性的元素
     document.querySelectorAll('[data-zh][data-en]').forEach(element => {
         element.textContent = element.getAttribute(`data-${lang}`);
     });
-    
+    document.querySelectorAll('img[data-alt-zh][data-alt-en]').forEach(img => {
+        img.alt = img.getAttribute(`data-alt-${lang}`) || '';
+    });
+
     // 更新语言按钮状态
     document.querySelectorAll('.lang-btn').forEach(btn => {
         if (btn.getAttribute('data-lang') === lang) {

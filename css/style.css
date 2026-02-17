@@ -167,6 +167,7 @@ nav a.active {
 
 section {
     padding: 60px 0;
+    scroll-margin-top: 32px;
 }
 
 section:nth-child(even) {
