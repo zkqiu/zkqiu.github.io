@@ -32,13 +32,37 @@
 
     <section class="page-content">
         <div class="container">
-            <div class="blog-placeholder">
-                <div class="blog-placeholder-icon">📝</div>
-                <h3 data-zh="正在酝酿中" data-en="Coming Soon"></h3>
-                <p data-zh="后续会在这里接入文章列表，或链接到独立博客。敬请期待。" data-en="Articles will be added here soon, or linked to an independent blog. Stay tuned."></p>
+            <h2 class="section-title" data-zh="最新文章" data-en="Latest Articles"></h2>
+            
+            <div class="blog-list">
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <h3><a href="blog/openclaw-setup-guide.html">🤖 My OpenClaw Setup Journey</a></h3>
+                        <p class="blog-meta">Published on February 18, 2026</p>
+                        <p data-zh="记录我配置 OpenClaw AI 助手的完整过程，从安装到 Gmail 监控和自动化任务设置。" data-en="A complete guide to setting up OpenClaw AI assistant, from installation to Gmail monitoring and automated task configuration."></p>
+                        <a href="blog/openclaw-setup-guide.html" class="read-more" data-zh="阅读全文 →" data-en="Read More →">Read More →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="blog-placeholder" style="margin-top: 40px;">
+                <p data-zh="更多文章即将推出..." data-en="More articles coming soon..."></p>
             </div>
         </div>
     </section>
+
+    <style>
+        .blog-list { max-width: 800px; margin: 0 auto; }
+        .blog-card { background: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+        .blog-card:hover { transform: translateY(-3px); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+        .blog-card h3 { margin: 0 0 10px 0; }
+        .blog-card h3 a { color: #333; text-decoration: none; }
+        .blog-card h3 a:hover { color: #007bff; }
+        .blog-meta { color: #666; font-size: 0.85em; margin-bottom: 15px; }
+        .blog-card p { color: #555; line-height: 1.6; }
+        .read-more { display: inline-block; margin-top: 15px; color: #007bff; text-decoration: none; font-weight: 500; }
+        .read-more:hover { text-decoration: underline; }
+    </style>
 
     <footer>
         <div class="container">

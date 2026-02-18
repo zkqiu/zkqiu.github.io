@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My OpenClaw Setup Journey - zkqiu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-post { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .blog-header { text-align: center; margin-bottom: 40px; }
+        .blog-title { font-size: 2.5em; margin-bottom: 10px; }
+        .blog-meta { color: #666; font-size: 0.9em; }
+        .blog-content { line-height: 1.8; }
+        .blog-content h2 { color: #333; margin-top: 40px; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .blog-content h3 { color: #555; margin-top: 30px; }
+        .blog-content code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .blog-content pre { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; overflow-x: auto; }
+        .blog-content pre code { background: none; padding: 0; }
+        .blog-content ul { margin: 15px 0; }
+        .blog-content li { margin: 8px 0; }
+        .tip-box { background: #e7f3ff; border-left: 4px solid #007bff; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .illustration { text-align: center; margin: 30px 0; }
+        .illustration svg { max-width: 100%; height: auto; }
+        .step-number { display: inline-block; width: 30px; height: 30px; background: #007bff; color: white; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 10px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #007bff; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <header>
+        <div class="container">
+            <h1 data-zh="邱志康" data-en="Zhikang (Allen) Qiu">zkqiu</h1>
+            <p data-zh="开发者、写作者与探索者 | 探索知识，追求卓越" data-en="Developer & Writer | Exploring Knowledge, Pursuing Excellence"></p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="../index.html#about" data-zh="关于我" data-en="About Me"></a></li>
+                <li><a href="../blog.html" data-zh="博客" data-en="Blog"></a></li>
+                <li><a href="../projects.html" data-zh="项目" data-en="Projects"></a></li>
+                <li><a href="../index.html#contact" data-zh="联系方式" data-en="Contact"></a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="zh">中文</button>
+                <button class="lang-btn active" data-lang="en">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <article class="blog-post">
+        <a href="../blog.html" class="back-link">← Back to Blog</a>
+        
+        <div class="blog-header">
+            <h1 class="blog-title">🤖 My OpenClaw Setup Journey</h1>
+            <p class="blog-meta">Published on February 18, 2026 | 5 min read</p>
+        </div>
+
+        <div class="illustration">
+            <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="400" height="200" fill="#f8f9fa" rx="10"/>
+                <circle cx="200" cy="80" r="50" fill="url(#grad1)"/>
+                <circle cx="185" cy="70" r="8" fill="white"/>
+                <circle cx="215" cy="70" r="8" fill="white"/>
+                <circle cx="185" cy="70" r="4" fill="#333"/>
+                <circle cx="215" cy="70" r="4" fill="#333"/>
+                <ellipse cx="200" cy="95" rx="15" ry="8" fill="white"/>
+                <rect x="120" y="140" width="160" height="40" rx="8" fill="#2d2d2d"/>
+                <text x="200" y="165" text-anchor="middle" fill="#00ff00" font-family="monospace" font-size="12">openclaw init ✨</text>
+                <circle cx="140" cy="120" r="15" fill="#28a745" opacity="0.8"/>
+                <circle cx="260" cy="120" r="15" fill="#28a745" opacity="0.8"/>
+                <circle cx="200" cy="110" r="15" fill="#28a745" opacity="0.8"/>
+            </svg>
+        </div>
+
+        <div class="blog-content">
+            <p>Recently, I set up <strong>OpenClaw</strong> — a powerful AI agent framework that runs locally and integrates with my daily tools. Here's my complete setup journey, from installation to configuring email monitoring and automated reminders.</p>
+
+            <div class="tip-box">
+                <strong>💡 What is OpenClaw?</strong> OpenClaw is a local AI agent system that can control your browser, manage files, send messages, schedule tasks, and much more — all while keeping your data private on your own machine.
+            </div>
+
+            <h2><span class="step-number">1</span>Installation</h2>
+            <p>OpenClaw is installed via npm. The installation is straightforward:</p>
+            <pre><code>npm install -g openclaw</code></pre>
+            <p>After installation, you can verify it's working:</p>
+            <pre><code>openclaw --version</code></pre>
+
+            <h2><span class="step-number">2</span>Initial Configuration</h2>
+            <p>The first run requires some basic setup. OpenClaw creates a workspace directory at <code>~/.openclaw/workspace</code> with essential configuration files:</p>
+            <ul>
+                <li><code>SOUL.md</code> — Defines the AI's personality and behavior</li>
+                <li><code>IDENTITY.md</code> — Your AI's name and characteristics</li>
+                <li><code>USER.md</code> — Information about you (the user)</li>
+                <li><code>AGENTS.md</code> — Operating guidelines and best practices</li>
+                <li><code>memory/</code> — Directory for session memories and notes</li>
+            </ul>
+
+            <div class="illustration">
+                <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="150" fill="#f8f9fa" rx="10"/>
+                    <rect x="50" y="30" width="120" height="90" rx="5" fill="#667eea" opacity="0.2"/>
+                    <rect x="70" y="40" width="80" height="15" rx="3" fill="#667eea"/>
+                    <rect x="70" y="65" width="80" height="10" rx="2" fill="#667eea" opacity="0.6"/>
+                    <rect x="70" y="85" width="80" height="10" rx="2" fill="#667eea" opacity="0.6"/>
+                    <rect x="70" y="105" width="80" height="10" rx="2" fill="#667eea" opacity="0.6"/>
+                    <rect x="230" y="30" width="120" height="90" rx="5" fill="#764ba2" opacity="0.2"/>
+                    <rect x="250" y="40" width="80" height="15" rx="3" fill="#764ba2"/>
+                    <rect x="250" y="65" width="80" height="10" rx="2" fill="#764ba2" opacity="0.6"/>
+                    <rect x="250" y="85" width="80" height="10" rx="2" fill="#764ba2" opacity="0.6"/>
+                    <text x="200" y="140" text-anchor="middle" fill="#666" font-size="12">Workspace Structure</text>
+                </svg>
+            </div>
+
+            <h2><span class="step-number">3</span>WhatsApp Integration</h2>
+            <p>One of the first things I configured was WhatsApp messaging. OpenClaw can send and receive messages through WhatsApp, making it easy to interact with the AI from my phone.</p>
+            <p>The setup involves scanning a QR code to link your WhatsApp account. Once connected, you can chat with your AI agent just like any other contact!</p>
+
+            <h2><span class="step-number">4</span>Gmail Monitoring Setup</h2>
+            <p>This was the most interesting part. I wanted OpenClaw to automatically check my Gmail and notify me of important messages.</p>
+            
+            <h3>Option A: OAuth (Google Cloud Console)</h3>
+            <p>Initially, I tried the OAuth route, which requires:</p>
+            <ul>
+                <li>Creating a project in Google Cloud Console</li>
+                <li>Enabling Gmail API</li>
+                <li>Creating OAuth credentials</li>
+                <li>Adding test users (since the app isn't verified)</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>⚠️ Challenge:</strong> The OAuth app shows "not verified" warnings for new projects. You need to add your email as a test user in the consent screen settings.
+            </div>
+
+            <h3>Option B: IMAP (Simpler!)</h3>
+            <p>I ended up using the simpler IMAP approach with an App Password:</p>
+            <ol>
+                <li>Enable 2FA on your Google Account</li>
+                <li>Generate an App Password at <code>myaccount.google.com/apppasswords</code></li>
+                <li>Configure IMAP settings in OpenClaw</li>
+            </ol>
+            <pre><code># IMAP Configuration
+IMAP Server: imap.gmail.com
+Port: 993 (SSL)
+Username: your.email@gmail.com
+Password: [App Password]</code></pre>
+
+            <div class="illustration">
+                <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="120" fill="#f8f9fa" rx="10"/>
+                    <rect x="30" y="40" width="100" height="40" rx="5" fill="#EA4335"/>
+                    <text x="80" y="65" text-anchor="middle" fill="white" font-size="14">Gmail</text>
+                    <path d="M 130 60 L 170 60" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="170" y="40" width="100" height="40" rx="5" fill="#667eea"/>
+                    <text x="220" y="65" text-anchor="middle" fill="white" font-size="14">OpenClaw</text>
+                    <path d="M 270 60 L 310 60" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="310" y="40" width="70" height="40" rx="5" fill="#28a745"/>
+                    <text x="345" y="65" text-anchor="middle" fill="white" font-size="12">You!</text>
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#666"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <h2><span class="step-number">5</span>Scheduling Automated Checks</h2>
+            <p>With Gmail connected, I set up a cron job to check for new emails every 30 minutes:</p>
+            <pre><code># Runs every 30 minutes
+*/30 * * * * openclaw check-email</code></pre>
+            <p>This ensures I never miss important messages, and OpenClaw can even help draft replies!</p>
+
+            <h2><span class="step-number">6</span>Memory & Context</h2>
+            <p>OpenClaw maintains memory across sessions using markdown files:</p>
+            <ul>
+                <li><code>memory/YYYY-MM-DD.md</code> — Daily session logs</li>
+                <li><code>MEMORY.md</code> — Long-term curated memories</li>
+            </ul>
+            <p>This allows the AI to remember context from previous conversations and build a better understanding of your needs over time.</p>
+
+            <h2>🎯 Results</h2>
+            <p>After setup, OpenClaw can now:</p>
+            <ul>
+                <li>✅ Check Gmail every 30 minutes</li>
+                <li>✅ Send messages via WhatsApp</li>
+                <li>✅ Browse the web and fetch content</li>
+                <li>✅ Manage files and organize my workspace</li>
+                <li>✅ Schedule reminders and cron jobs</li>
+                <li>✅ Control browser automation</li>
+            </ul>
+
+            <h2>🔧 Tips & Lessons Learned</h2>
+            <ul>
+                <li><strong>Start simple:</strong> Don't try to configure everything at once. Get the basics working first.</li>
+                <li><strong>IMAP > OAuth:</strong> For Gmail, the IMAP approach with App Password is much simpler than OAuth.</li>
+                <li><strong>Memory matters:</strong> Take time to review and curate your MEMORY.md file periodically.</li>
+                <li><strong>Security first:</strong> Never commit sensitive credentials to git. Use environment variables.</li>
+            </ul>
+
+            <h2>🚀 What's Next?</h2>
+            <p>I'm planning to explore more advanced features:</p>
+            <ul>
+                <li>Browser automation for web scraping</li>
+                <li>Integration with calendar for smart scheduling</li>
+                <li>Custom skills for my specific workflows</li>
+                <li>Voice interactions with TTS</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>📚 Resources:</strong>
+                <ul>
+                    <li>OpenClaw Docs: <a href="https://docs.openclaw.ai" target="_blank">docs.openclaw.ai</a></li>
+                    <li>GitHub: <a href="https://github.com/openclaw/openclaw" target="_blank">github.com/openclaw/openclaw</a></li>
+                    <li>Community: <a href="https://discord.com/invite/clawd" target="_blank">Discord</a></li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666;">
+                <em>Have you tried OpenClaw? I'd love to hear about your setup! Feel free to reach out via <a href="../index.html#contact">my contact page</a>.</em>
+            </p>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p data-zh="© 2025 邱志康. All rights reserved." data-en="© 2025 Zhikang (Allen) Qiu. All rights reserved.">&copy; 2025 zkqiu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
