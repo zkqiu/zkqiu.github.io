@@ -461,7 +461,7 @@ footer {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 10px;
     font-size: 1.1rem;
     font-weight: 600;
     transition: transform 0.3s, box-shadow 0.3s;
