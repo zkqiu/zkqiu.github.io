@@ -92,49 +92,6 @@ nav a.active {
     font-weight: 600;
 }
 
-/* 下拉菜单样式 */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    min-width: 180px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 8px 0;
-    margin-top: 8px;
-    list-style: none;
-    z-index: 1000;
-    white-space: nowrap;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li {
-    margin: 0;
-}
-
-.dropdown-menu a {
-    padding: 10px 20px;
-    display: block;
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.dropdown-menu a:hover {
-    background-color: var(--bg-light);
-    color: var(--primary-color);
-}
-
 .lang-switcher {
     display: flex;
     gap: 10px;
@@ -500,21 +457,6 @@ footer {
 
     nav li {
         margin: 5px 0;
-    }
-
-    .dropdown-menu {
-        position: static;
-        transform: none;
-        margin-top: 0;
-        box-shadow: none;
-        border-top: 1px solid var(--border-color);
-        border-radius: 0;
-        display: none;
-    }
-
-    .dropdown:hover .dropdown-menu,
-    .dropdown.active .dropdown-menu {
-        display: block;
     }
 
     .lang-switcher {
