@@ -8,28 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="smooth-scroll">
-    <header>
-        <div class="container">
-            <h1 data-zh="邱志康" data-en="Zhikang (Allen) Qiu">zkqiu</h1>
-            <p data-zh="开发者、写作者与探索者 | 探索知识，追求卓越" data-en="Developer & Writer | Exploring Knowledge, Pursuing Excellence"></p>
-        </div>
-    </header>
+    <header data-component="header"></header>
 
-    <nav>
-        <div class="container nav-container">
-            <ul>
-                <li><a href="#about" data-zh="关于我" data-en="About Me"></a></li>
-                <li><a href="blog.html" data-zh="博客" data-en="Blog"></a></li>
-                <li><a href="projects.html" data-zh="项目" data-en="Projects"></a></li>
-                <li><a href="#contact" data-zh="联系方式" data-en="Contact"></a></li>
-                <li><a href="#resume" data-zh="简历" data-en="Resume"></a></li>
-            </ul>
-            <div class="lang-switcher">
-                <button class="lang-btn" data-lang="zh">中文</button>
-                <button class="lang-btn active" data-lang="en">English</button>
-            </div>
-        </div>
-    </nav>
+    <nav data-component="nav" data-nav-mode="home"></nav>
 
     <section id="about">
         <div class="container">
@@ -46,29 +27,18 @@
         </div>
     </section>
 
-    <section id="resume">
-        <div class="container">
-            <h2 class="section-title" data-zh="简历" data-en="Resume"></h2>
-            <div class="resume-download">
-                <a href="assets/resume.pdf" download="Zhikang_Qiu_Resume.pdf" class="resume-btn">
-                    <span data-zh="📄 下载英文简历 (PDF)" data-en="📄 Download Resume (PDF)"></span>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <section id="education">
         <div class="container">
             <h2 class="section-title" data-zh="教育背景" data-en="Education"></h2>
             <div class="education-item">
                 <h3 data-zh="上海交通大学" data-en="Shanghai Jiao Tong University"></h3>
                 <div class="degree" data-zh="硕士学位 - 自动化" data-en="Master's Degree - Automation"></div>
-                <div class="period" data-zh="2018年 - 2021年" data-en="2018 - 2021"></div>
+                <div class="period" data-zh="2018 年 - 2021 年" data-en="2018 - 2021"></div>
             </div>
             <div class="education-item">
                 <h3 data-zh="上海交通大学" data-en="Shanghai Jiao Tong University"></h3>
                 <div class="degree" data-zh="学士学位 - 机械工程" data-en="Bachelor's Degree - Mechanical Engineering"></div>
-                <div class="period" data-zh="2014年 - 2018年" data-en="2014 - 2018"></div>
+                <div class="period" data-zh="2014 年 - 2018 年" data-en="2014 - 2018"></div>
             </div>
         </div>
     </section>
@@ -127,11 +97,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p data-zh="© 2025 邱志康. All rights reserved." data-en="© 2025 Zhikang (Allen) Qiu. All rights reserved.">&copy; 2025 zkqiu. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer data-component="footer"></footer>
 
     <script src="js/main.js"></script>
 </body>
