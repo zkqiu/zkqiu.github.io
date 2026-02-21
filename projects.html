@@ -8,27 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="smooth-scroll">
-    <header>
-        <div class="container">
-            <h1 data-zh="邱志康" data-en="Zhikang (Allen) Qiu">zkqiu</h1>
-            <p data-zh="开发者、写作者与探索者 | 探索知识，追求卓越" data-en="Developer & Writer | Exploring Knowledge, Pursuing Excellence"></p>
-        </div>
-    </header>
+    <header data-component="header"></header>
 
-    <nav>
-        <div class="container nav-container">
-            <ul>
-                <li><a href="index.html#about" data-zh="关于我" data-en="About Me"></a></li>
-                <li><a href="blog.html" data-zh="博客" data-en="Blog"></a></li>
-                <li><a href="projects.html" data-zh="项目" data-en="Projects"></a></li>
-                <li><a href="index.html#contact" data-zh="联系方式" data-en="Contact"></a></li>
-            </ul>
-            <div class="lang-switcher">
-                <button class="lang-btn" data-lang="zh">中文</button>
-                <button class="lang-btn active" data-lang="en">English</button>
-            </div>
-        </div>
-    </nav>
+    <nav data-component="nav" data-nav-mode="page"></nav>
 
     <section class="page-content">
         <div class="container">
@@ -44,7 +26,7 @@
                         </svg>
                     </a>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-icon">📔</div>
                     <h3 data-zh="黄昏笔记" data-en="Dusk Notes"></h3>
@@ -56,7 +38,7 @@
                         </svg>
                     </a>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-icon">🎞️</div>
                     <h3 data-zh="胶片模拟器" data-en="Film Simulator"></h3>
@@ -72,11 +54,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p data-zh="© 2025 邱志康. All rights reserved." data-en="© 2025 Zhikang (Allen) Qiu. All rights reserved.">&copy; 2025 zkqiu. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer data-component="footer"></footer>
 
     <script src="js/main.js"></script>
 </body>

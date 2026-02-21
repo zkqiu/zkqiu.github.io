@@ -28,31 +28,13 @@
     </style>
 </head>
 <body class="smooth-scroll">
-    <header>
-        <div class="container">
-            <h1 data-zh="邱志康" data-en="Zhikang (Allen) Qiu">zkqiu</h1>
-            <p data-zh="开发者、写作者与探索者 | 探索知识，追求卓越" data-en="Developer & Writer | Exploring Knowledge, Pursuing Excellence"></p>
-        </div>
-    </header>
+    <header data-component="header"></header>
 
-    <nav>
-        <div class="container nav-container">
-            <ul>
-                <li><a href="../index.html#about" data-zh="关于我" data-en="About Me"></a></li>
-                <li><a href="../blog.html" data-zh="博客" data-en="Blog"></a></li>
-                <li><a href="../projects.html" data-zh="项目" data-en="Projects"></a></li>
-                <li><a href="../index.html#contact" data-zh="联系方式" data-en="Contact"></a></li>
-            </ul>
-            <div class="lang-switcher">
-                <button class="lang-btn" data-lang="zh">中文</button>
-                <button class="lang-btn active" data-lang="en">English</button>
-            </div>
-        </div>
-    </nav>
+    <nav data-component="nav" data-nav-mode="page"></nav>
 
     <article class="blog-post">
         <a href="../blog.html" class="back-link">← Back to Blog</a>
-        
+
         <div class="blog-header">
             <h1 class="blog-title">🤖 My OpenClaw Setup Journey</h1>
             <p class="blog-meta">Published on February 18, 2026 | 5 min read</p>
@@ -126,7 +108,7 @@
 
             <h2><span class="step-number">4</span>Gmail Monitoring Setup</h2>
             <p>This was the most interesting part. I wanted OpenClaw to automatically check my Gmail and notify me of important messages.</p>
-            
+
             <h3>Option A: OAuth (Google Cloud Console)</h3>
             <p>Initially, I tried the OAuth route, which requires:</p>
             <ul>
@@ -229,11 +211,7 @@ Password: [App Password]</code></pre>
         </div>
     </article>
 
-    <footer>
-        <div class="container">
-            <p data-zh="© 2025 邱志康. All rights reserved." data-en="© 2025 Zhikang (Allen) Qiu. All rights reserved.">&copy; 2025 zkqiu. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer data-component="footer"></footer>
 
     <script src="../js/main.js"></script>
 </body>

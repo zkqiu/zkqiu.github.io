@@ -1,4 +1,75 @@
-// 语言切换功能
+// ==================== 组件加载系统 ====================
+// 组件 HTML 字符串（避免 file:// 协议下 fetch 的 CORS 限制）
+const components = {
+    header: `<header>
+    <div class="container">
+        <h1 data-zh="邱志康" data-en="Zhikang (Allen) Qiu">zkqiu</h1>
+        <p data-zh="开发者、写作者与探索者 | 探索知识，追求卓越" data-en="Developer & Writer | Exploring Knowledge, Pursuing Excellence"></p>
+    </div>
+</header>`,
+
+    nav: `<nav>
+    <div class="container nav-container">
+        <ul>
+            <li><a href="{ROOT}index.html#about" data-zh="关于我" data-en="About Me"></a></li>
+            <li><a href="{ROOT}blog.html" data-zh="博客" data-en="Blog"></a></li>
+            <li><a href="{ROOT}projects.html" data-zh="项目" data-en="Projects"></a></li>
+            <li><a href="{ROOT}index.html#contact" data-zh="联系方式" data-en="Contact"></a></li>
+        </ul>
+        <div class="lang-switcher">
+            <button class="lang-btn" data-lang="zh">中文</button>
+            <button class="lang-btn active" data-lang="en">English</button>
+        </div>
+    </div>
+</nav>`,
+
+    footer: `<footer>
+    <div class="container">
+        <p data-zh="© 2025 邱志康。All rights reserved." data-en="© 2025 Zhikang (Allen) Qiu. All rights reserved.">&copy; 2025 zkqiu. All rights reserved.</p>
+    </div>
+</footer>`
+};
+
+// 自动检测当前文件路径，计算组件相对路径
+function getComponentRoot() {
+    const path = window.location.pathname;
+    // 如果在 /blog/ 等子目录下，需要向上一级查找组件
+    if (path.includes('/blog/')) {
+        return '../';
+    }
+    return '';
+}
+
+// 动态加载公共组件
+function loadComponents() {
+    const root = getComponentRoot();
+
+    // 加载 header
+    const headerEl = document.querySelector('header[data-component="header"]');
+    if (headerEl) {
+        headerEl.outerHTML = components.header;
+    }
+
+    // 加载 nav
+    const navEl = document.querySelector('nav[data-component="nav"]');
+    if (navEl) {
+        const navHtml = components.nav.replace(/{ROOT}/g, root);
+        navEl.outerHTML = navHtml;
+    }
+
+    // 加载 footer
+    const footerEl = document.querySelector('footer[data-component="footer"]');
+    if (footerEl) {
+        footerEl.outerHTML = components.footer;
+    }
+
+    // 组件加载完成后重新初始化语言切换
+    initLanguage();
+    // 高亮当前页面
+    highlightCurrentPage();
+}
+
+// ==================== 语言切换功能 ====================
 const translations = {
     zh: 'zh-CN',
     en: 'en'
@@ -11,10 +82,10 @@ let currentLang = localStorage.getItem('language') || 'en';
 function switchLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('language', lang);
-    
-    // 更新HTML lang属性
+
+    // 更新 HTML lang 属性
     document.documentElement.lang = translations[lang];
-    
+
     document.querySelectorAll('[data-zh][data-en]').forEach(element => {
         element.textContent = element.getAttribute(`data-${lang}`);
     });
@@ -32,16 +103,16 @@ function switchLanguage(lang) {
     });
 }
 
-// 初始化语言
-switchLanguage(currentLang);
-
-// 绑定语言切换按钮事件
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const lang = this.getAttribute('data-lang');
-        switchLanguage(lang);
+// 初始化语言（供组件加载完成后调用）
+function initLanguage() {
+    switchLanguage(currentLang);
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            switchLanguage(lang);
+        });
     });
-});
+}
 
 // 平滑滚动（仅处理当前页面的锚点）
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -102,9 +173,7 @@ function highlightCurrentPage() {
     });
 }
 
-// 页面加载时高亮当前页面
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', highlightCurrentPage);
-} else {
-    highlightCurrentPage();
-}
+// 页面加载完成后加载公共组件
+window.addEventListener('DOMContentLoaded', () => {
+    loadComponents();
+});
