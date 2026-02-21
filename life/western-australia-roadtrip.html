@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zhikang (Allen) Qiu - Western Australia Road Trip | Travel Diary">
+    <title>西澳自驾之旅 - Zhikang (Allen) Qiu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .travel-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .travel-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: var(--text-color);
+        }
+
+        .travel-meta {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        .travel-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .travel-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .travel-section p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #f3f4f6;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-item.wide {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+
+        .photo-item.small {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        .photo-item.medium {
+            grid-column: span 2;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px 15px 12px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .photo-item:hover .photo-caption {
+            opacity: 1;
+        }
+
+        .travel-quote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .article-note {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .article-note p {
+            margin-bottom: 10px;
+        }
+
+        .photographers {
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .photo-item.wide {
+                grid-column: span 1;
+            }
+
+            .photo-item.small,
+            .photo-item.medium {
+                max-width: 100%;
+                grid-column: span 1;
+            }
+
+            .travel-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <header data-component="header"></header>
+
+    <nav data-component="nav" data-nav-mode="page"></nav>
+
+    <section class="page-content">
+        <div class="travel-content">
+            <h1 class="travel-title" data-zh="西澳自驾之旅：从新加坡到 Esperance 的十天" data-en="Western Australia Road Trip: Ten Days from Singapore to Esperance"></h1>
+            <p class="travel-meta">February 2026 · Perth, Margaret River, Albany, Esperance</p>
+
+            <div class="travel-section">
+                <h3 data-zh="序：从新加坡出发" data-en="Prologue: Departing from Singapore"></h3>
+                <p data-zh="二月的一个清晨，我从新加坡出发，登上了飞往巴厘岛的航班。在巴厘岛待了两天，享受了短暂的休闲时光后，我们启程前往西澳，开始期待已久的自驾之旅。" data-en="On a February morning, I departed from Singapore and flew to Bali. After spending two relaxing days in Bali, we set off for Western Australia to begin the long-awaited road trip."></p>
+                <div class="photo-grid">
+                    <div class="photo-item medium">
+                        <img src="../assets/life/bali-to-perth.jpg" alt="飞往珀斯" data-alt-zh="从巴厘岛飞往珀斯的航班上" data-alt-en="Flying from Bali to Perth">
+                        <div class="photo-caption" data-zh="从巴厘岛飞往珀斯，启程" data-en="Flying from Bali to Perth, setting off"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="travel-section">
+                <h3 data-zh="第一站：Perth 落地" data-en="First Stop: Landing in Perth"></h3>
+                <p data-zh="抵达珀斯后，我们先到酒店放下行李。当晚在市区找了一家餐厅，吃了抵达后的第一顿饭——战斧牛排，配上西澳产的葡萄酒，为第二天的自驾养精蓄锐。" data-en="After arriving in Perth, we first dropped our luggage at the hotel. That evening, we found a restaurant in the city and had our first meal — a T-bone steak with Western Australian wine, preparing for the road trip the next day."></p>
+                <div class="photo-grid">
+                    <div class="photo-item medium">
+                        <img src="../assets/life/perth-steak.jpg" alt="Perth 第一餐" data-zh="Perth 第一餐——战斧牛排" data-en="First meal in Perth - T-bone steak">
+                        <div class="photo-caption" data-zh="Perth 第一餐" data-en="First meal in Perth"></div>
+                    </div>
+                </div>
+                <p data-zh="第二天早上，我们取了提前租好的车。检查车况、熟悉路线，然后正式开始了西澳自驾之旅。" data-en="The next morning, we picked up our pre-booked rental car. After checking the vehicle and familiarizing ourselves with the route, we officially began our Western Australia road trip."></p>
+            </div>
+
+            <div class="travel-section">
+                <h3 data-zh="玛格丽特河：海边漫步" data-en="Margaret River: Seaside Stroll"></h3>
+                <p data-zh="从珀斯向南，三个小时的车程，我们来到了玛格丽特河地区。这里以西澳最优质的葡萄酒产区闻名。" data-en="Three hours south from Perth, we arrived at Margaret River. Famous for Western Australia's finest wine region."></p>
+                <p data-zh="在海边，我们看到几只海鸥静静地站在岩石上，望着大海，仿佛在等待着什么。那一刻的宁静，让人不忍打扰。" data-en="By the seaside, we saw several seagulls standing quietly on the rocks, gazing at the ocean. The tranquility of that moment made us reluctant to disturb."></p>
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="../assets/life/margaret-river-seagull.jpg" alt="海边的海鸥" data-zh="玛格丽特河海边的海鸥" data-en="Seagulls by Margaret River">
+                        <div class="photo-caption" data-zh="海鸥站在岩石上，望着大海" data-en="Seagulls standing on rocks, gazing at the sea"></div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="../assets/life/margaret-river-garden.jpg" alt="巧克力工厂花园" data-zh="玛格丽特河巧克力工厂的后花园" data-en="Garden behind Margaret River chocolate factory">
+                        <div class="photo-caption" data-zh="巧克力工厂的后花园" data-en="Garden behind the chocolate factory"></div>
+                    </div>
+                </div>
+                <p data-zh="晚餐在一家当地餐厅，牛排的品质令人印象深刻。西澳的和牛，确实有其独特之处。" data-en="Dinner at a local restaurant, the steak quality was impressive. Western Australian Wagyu truly has its unique characteristics."></p>
+                <div class="photo-grid">
+                    <div class="photo-item medium">
+                        <img src="../assets/life/margaret-river-steak.jpg" alt="餐厅牛排" data-zh="玛格丽特河餐厅的牛排" data-en="Steak at Margaret River restaurant">
+                        <div class="photo-caption" data-zh="西澳和牛" data-en="Western Australian Wagyu"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="travel-section">
+                <h3 data-zh="Albany：岩蚝的滋味" data-en="Albany: The Taste of Rock Oysters"></h3>
+                <p data-zh="继续向东，我们到达了奥尔巴尼。这个小镇以其新鲜的岩蚝闻名。在一家当地餐厅，我们品尝了刚从海里捞出的生蚝，海水的咸鲜在口中绽放——这是城市里永远无法体验到的味道。" data-en="Continuing east, we reached Albany. This small town is famous for its fresh rock oysters. At a local restaurant, we tasted oysters freshly harvested from the sea, the salty freshness blooming in our mouths — a taste that can never be experienced in the city."></p>
+                <div class="photo-grid">
+                    <div class="photo-item wide">
+                        <img src="../assets/life/albany-oysters.jpg" alt="Albany 岩蚝" data-zh="Albany 新鲜的岩蚝" data-en="Fresh rock oysters in Albany">
+                        <div class="photo-caption" data-zh="刚从海里捞出的新鲜" data-en="Freshly harvested from the sea"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="travel-section">
+                <h3 data-zh="Esperance：三天的慢时光" data-en="Esperance: Three Days of Slow Time"></h3>
+                <p data-zh="Esperance 是此行的重头戏。我们在这里待了三天，没有紧凑的行程，只是慢慢地生活，慢慢地感受。" data-en="Esperance was the highlight of this trip. We stayed here for three days, without a tight schedule, just living slowly, feeling slowly."></p>
+
+                <div class="travel-quote" data-zh="「有时候，旅行的意义不在于看了多少风景，而在于在某个地方真正地停留过。」" data-en="Sometimes the meaning of travel is not about how much scenery you see, but about truly staying in a place."></div>
+
+                <p data-zh="我们住在海边的一家民宿。每天早上被海浪声唤醒，是一种难得的体验。闲暇时，我跟着 ChatGPT 学着手冲咖啡——没想到在旅途中，AI 成了我的咖啡老师。" data-en="We stayed at a seaside homestay. Waking up to the sound of waves every morning was a rare experience. In my leisure time, I learned pour-over coffee from ChatGPT — never expected AI to become my coffee teacher on this trip."></p>
+
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="../assets/life/esperance-coffee.jpg" alt="手冲咖啡" data-zh="学着手冲咖啡" data-en="Learning pour-over coffee">
+                        <div class="photo-caption" data-zh="ChatGPT 教的第一杯手冲" data-en="First pour-over taught by ChatGPT"></div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="../assets/life/esperance-homestay-sea.jpg" alt="民宿旁的海边" data-zh="民宿旁的海边" data-en="Seaside next to the homestay">
+                        <div class="photo-caption" data-zh="出门就是海" data-en="The sea right outside the door"></div>
+                    </div>
+                </div>
+
+                <p data-zh="Esperance 的海边有一些简单的座椅。我们偶尔会在那里坐一会儿，看海浪拍打岸边，听海鸥的鸣叫，享受片刻的宁静。" data-en="There were some simple seats by the seaside in Esperance. We would occasionally sit there for a while, watching the waves hit the shore, listening to the seagulls' calls, enjoying moments of tranquility."></p>
+
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="../assets/life/esperance-seats.jpg" alt="海边座椅" data-zh="Esperance 海边的座椅" data-en="Seats by Esperance seaside">
+                        <div class="photo-caption" data-zh="简单的座椅，安静的时光" data-en="Simple seats, quiet moments"></div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="../assets/life/esperance-beach.jpg" alt="Esperance 海滩" data-zh="Esperance 的海" data-en="Esperance beach">
+                        <div class="photo-caption" data-zh="纯净的海" data-en="Pure sea"></div>
+                    </div>
+                    <div class="photo-item wide">
+                        <img src="../assets/life/esperance-friends.jpg" alt="朋友合影" data-zh="和朋友们在海边" data-en="With friends by the seaside">
+                        <div class="photo-caption" data-zh="和朋友们在一起，就是最好的时光" data-en="The best times are with friends"></div>
+                    </div>
+                </div>
+
+                <p data-zh="在 Esperance 的第二天，我们去了 The Gap。那是大自然的杰作——海水经过千万年的侵蚀，在岩石中切割出一道狭窄的缝隙。站在那里，你能感受到时间的力量。" data-en="On the second day in Esperance, we went to The Gap. It's a masterpiece of nature — seawater has cut a narrow gap in the rocks through thousands of years of erosion. Standing there, you can feel the power of time."></p>
+
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="../assets/life/the-gap.jpg" alt="The Gap" data-zh="The Gap - 大自然的杰作" data-en="The Gap - Nature's masterpiece">
+                        <div class="photo-caption" data-zh="千万年的侵蚀" data-en="Thousands of years of erosion"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="travel-section">
+                <h3 data-zh="归途：带着些什么回来" data-en="Return: What I Brought Back"></h3>
+                <p data-zh="结束 Esperance 的行程后，我们开车返回珀斯。在 Perth 住了一晚，第二天便前往机场，准备返回各自的生活。" data-en="After finishing our Esperance itinerary, we drove back to Perth. We stayed one night in Perth, and the next day headed to the airport, ready to return to our respective lives."></p>
+                <p data-zh="这十天，我从日常的工作中抽离，变成了一个被阳光和海风治愈的人。带回来的除了照片，还有一种提醒——提醒自己在忙碌的生活中，也要记得停下来，去看看这个世界的美好。" data-en="In these ten days, I stepped away from daily work and became someone healed by sunshine and sea breeze. What I brought back, besides photos, was a reminder — to remember to stop and see the beauty of this world even in the busy life."></p>
+
+                <div class="travel-quote" data-zh="「旅行不会结束，它只是换了一种方式继续——在你的记忆里，在你的眼神里，在你对待生活的态度里。」" data-en="Travel never ends, it just continues in a different way — in your memories, in your eyes, in your attitude towards life."></div>
+            </div>
+
+            <div class="article-note">
+                <p data-zh="本文使用 AI 辅助生成。" data-en="This article was generated with AI assistance."></p>
+                <p data-zh="感谢摄影师们提供的精彩照片：" data-en="Special thanks to the photographers for their wonderful photos:"></p>
+                <p class="photographers">Elwin · Min · Liu · Yiliya</p>
+            </div>
+        </div>
+    </section>
+
+    <footer data-component="footer"></footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

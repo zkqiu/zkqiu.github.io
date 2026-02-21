@@ -4,7 +4,7 @@ const components = {
     header: `<header>
     <div class="container">
         <h1 data-zh="邱志康" data-en="Zhikang (Allen) Qiu">zkqiu</h1>
-        <p data-zh="开发者、写作者与探索者 | 探索知识，追求卓越" data-en="Developer & Writer | Exploring Knowledge, Pursuing Excellence"></p>
+        <p data-zh="AI 科学家、写作者与探索者 | 探索知识，追求卓越" data-en="AI Scientist & Writer | Exploring Knowledge, Pursuing Excellence"></p>
     </div>
 </header>`,
 
@@ -14,7 +14,8 @@ const components = {
             <li><a href="{ROOT}index.html#about" data-zh="关于我" data-en="About Me"></a></li>
             <li><a href="{ROOT}blog.html" data-zh="博客" data-en="Blog"></a></li>
             <li><a href="{ROOT}projects.html" data-zh="项目" data-en="Projects"></a></li>
-            <li><a href="{ROOT}index.html#contact" data-zh="联系方式" data-en="Contact"></a></li>
+            <li><a href="{ROOT}life.html" data-zh="生活" data-en="Life"></a></li>
+            <li><a href="{ROOT}reading.html" data-zh="阅读" data-en="Reading"></a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-btn" data-lang="zh">中文</button>
@@ -33,8 +34,14 @@ const components = {
 // 自动检测当前文件路径，计算组件相对路径
 function getComponentRoot() {
     const path = window.location.pathname;
-    // 如果在 /blog/ 等子目录下，需要向上一级查找组件
-    if (path.includes('/blog/')) {
+    const href = window.location.href;
+    // 检查 URL 是否包含 /blog/ 或 /life/ 子目录
+    if (href.includes('/blog/') || href.includes('/life/')) {
+        return '../';
+    }
+    // 兼容 file:// 协议下的 Windows 路径
+    if (path.includes('C:/Files/Code/Allen/zkqiu.github.io/blog/') ||
+        path.includes('C:/Files/Code/Allen/zkqiu.github.io/life/')) {
         return '../';
     }
     return '';
